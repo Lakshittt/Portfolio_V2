@@ -30,13 +30,13 @@ const Terminal: React.FC<TerminalProps> = ({
   terminalRef,
   focusInput,
 }) => (
-  <div className="w-full lg:w-2/3 lg:border-l border-gray-800">
+  <div className="w-full lg:w-2/3 lg:border-l border-gray-800 pt-16">
     <div
       ref={terminalRef}
       className="h-screen p-4 lg:p-4 px-2 overflow-y-auto cursor-text"
       onClick={focusInput}
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto px-2">
         {/* Terminal Header */}
         <div className="flex items-center gap-2 mb-4 text-gray-500 text-sm lg:text-base">
           <TerminalIcon size={16} />
@@ -55,7 +55,7 @@ const Terminal: React.FC<TerminalProps> = ({
                   <span>{item.command}</span>
                 </div>
               )}
-              <div className="ml-4 mt-2">{item.output}</div>
+              <div className="mt-2">{item.output}</div>
             </div>
           ))}
         </div>

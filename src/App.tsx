@@ -41,7 +41,7 @@ function App() {
             message
           </div>
           <div>
-            <span className="text-yellow-400">about</span> - Learn about me
+            <span className="text-yellow-400">sudo</span> - about me
           </div>
           <div>
             <span className="text-yellow-400">skills</span> - View my technical
@@ -74,22 +74,22 @@ function App() {
       </div>
     ),
 
-    about: () => (
+    sudo: () => (
       <div className="space-y-3">
         <div className="text-green-500 font-bold">About Me...</div>
         <div className="text-gray-300 leading-relaxed">
           <p>
-            Hello! I'm a passionate Full Stack Developer with expertise in
-            modern web technologies.
+            Hello! I'm Lakshit jain passionate Full Stack Developer with
+            expertise in modern web technologies.
           </p>
-          <p className="mt-2">
+          {/* <p className="mt-2">
             I love creating elegant solutions to complex problems and building
             applications that make a difference.
           </p>
           <p className="mt-2">
             When I'm not coding, you can find me exploring new technologies,
             contributing to open source, or enjoying a good cup of coffee.
-          </p>
+          </p> */}
         </div>
       </div>
     ),
@@ -229,15 +229,9 @@ function App() {
                 </span>
               </div>
               <div className="text-gray-300 text-sm mb-2">
-                This PDF Summarizer project aims to address the need for
-                efficiently summarizing PDF documents, making it easier for
-                users to extract key information from lengthy texts. The primary
-                objectives of the project are to develop a user-friendly
-                interface for uploading PDF files, selecting specific pages or
-                ranges for summarization, generating summaries using advanced
-                natural language processing techniques, and enabling
-                question-answering functionality based on the content of the
-                documents.
+                PDF Summarizer lets users upload PDFs, select pages, and quickly
+                generate concise summaries or answer questions using advanced
+                NLP, making it easy to extract key information from documents.
               </div>
               <div className="text-xs text-gray-400 mt-4">
                 Python • Streamlit • PyPDF2 • Langchain • Hugging Face
@@ -259,16 +253,10 @@ function App() {
                 </span>
               </div>
               <div className="text-gray-300 text-sm mb-2">
-                Lachoo Connect is an Alumni App for our college, Lachoo Memorial
-                College. The app serves as a platform for alumni to connect with
-                each other, share their experiences, and stay updated on each
-                other's current endeavors. It utilizes Firebase for database
-                management and authentication and has been developed using
-                React. With Lachoo Connect, alumni can view profiles of other
-                alumni and learn about their professional accomplishments and
-                activities. The app fosters a sense of community among former
-                students, enabling them to network, mentor, and collaborate with
-                each other.
+                Lachoo Connect is a React and Firebase-based alumni app for
+                Lachoo Memorial College, enabling alumni to connect, network,
+                share experiences, and stay updated on each other's professional
+                journeys.
               </div>
               <div className="text-xs text-gray-400 mt-4">
                 HTML • CSS • JavaScript • Bootstrap • React
@@ -590,7 +578,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen font-mono flex text-green-500 bg-gradient-to-br from-zinc-800 via-black to-black relative overflow-hidden">
+    <div className="min-h-screen h-screen font-mono flex text-green-500 bg-gradient-to-br from-zinc-800 via-black to-black relative overflow-hidden ">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         src="/bg.mp4"
@@ -601,7 +589,7 @@ function App() {
       />
       <div className="absolute inset-0 bg-black bg-opacity-70 z-10" />
       {/* Move the hi div above the overlay and video, and give it a higher z-index */}
-      <div className="fixed top-0 left-0 w-full h-20 z-30 flex flex-col justify-center px-6 bg-black bg-opacity-80 backdrop-blur-md">
+      <div className="fixed top-0 left-0 w-full h-20 z-30 flex flex-col justify-center px-6 bg-black bg-opacity-30 backdrop-blur-md">
         <p className="text-green-500 text-lg font-bold">Lakshit Jain</p>
         <p className="text-gray-300 text-sm">Software Developer</p>
       </div>
