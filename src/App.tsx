@@ -167,42 +167,114 @@ function App() {
     projects: () => (
       <div className="space-y-4">
         <div className="text-green-500 font-bold">Featured Projects</div>
-        <div className="space-y-4">
-          <div className="border border-gray-600 p-3 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <Code size={16} className="text-yellow-400" />
-              <span className="text-yellow-400 font-semibold">
-                CareerFit-AI
-              </span>
+        <div className="space-y-4 flex flex-col gap-2">
+          <a
+            href="https://github.com/Lakshittt/CareerFit-AI"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="border border-gray-600 p-3 rounded">
+              <div className="flex items-center gap-2 mb-2">
+                <Code size={16} className="text-yellow-400" />
+                <span className="text-yellow-400 font-semibold">
+                  CareerFit-AI
+                </span>
+              </div>
+              <div className="text-gray-300 text-sm mb-2">
+                Developed an AI-powered job fit assessment tool that evaluates
+                resume compatibility with job descriptions using natural
+                language processing, providing fit percentage scores and
+                actionable improvement suggestions.
+              </div>
+              <div className="text-xs text-gray-400 mt-4">
+                Python • Streamlit • LangChain • Google Gemini AI
+              </div>
             </div>
-            <div className="text-gray-300 text-sm mb-2">
-              Developed an AI-powered job fit assessment tool that evaluates
-              resume compatibility with job descriptions using natural language
-              processing, providing fit percentage scores and actionable
-              improvement suggestions.
-            </div>
-            <div className="text-xs text-gray-400">
-              Python • Streamlit • LangChain • Google Gemini AI
-            </div>
-          </div>
+          </a>
 
-          <div className="border border-gray-600 p-3 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <TerminalIcon size={16} className="text-yellow-400" />
-              <span className="text-yellow-400 font-semibold">
-                Shopify Plus
-              </span>
+          <a
+            href="https://github.com/Lakshittt/Shopify-Plus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="border border-gray-600 p-3 rounded">
+              <div className="flex items-center gap-2 mb-2">
+                <TerminalIcon size={16} className="text-yellow-400" />
+                <span className="text-yellow-400 font-semibold">
+                  Shopify Plus
+                </span>
+              </div>
+              <div className="text-gray-300 text-sm mb-2">
+                Created a Node.js-based application to enhance the e-commerce
+                experience, supporting features such as file handling for
+                sellers, session management, token-based authentication, and
+                automated PDF invoice generation.
+              </div>
+              <div className="text-xs text-gray-400 mt-4">
+                React • Node.js • MongoDB • Express • EJS • JWT
+              </div>
             </div>
-            <div className="text-gray-300 text-sm mb-2">
-              Created a Node.js-based application to enhance the e-commerce
-              experience, supporting features such as file handling for sellers,
-              session management, token-based authentication, and automated PDF
-              invoice generation.
+          </a>
+
+          <a
+            href="https://github.com/Lakshittt/PDF-Summarizer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="border border-gray-600 p-3 rounded">
+              <div className="flex items-center gap-2 mb-2">
+                <TerminalIcon size={16} className="text-yellow-400" />
+                <span className="text-yellow-400 font-semibold">
+                  PDF-Summarizer
+                </span>
+              </div>
+              <div className="text-gray-300 text-sm mb-2">
+                This PDF Summarizer project aims to address the need for
+                efficiently summarizing PDF documents, making it easier for
+                users to extract key information from lengthy texts. The primary
+                objectives of the project are to develop a user-friendly
+                interface for uploading PDF files, selecting specific pages or
+                ranges for summarization, generating summaries using advanced
+                natural language processing techniques, and enabling
+                question-answering functionality based on the content of the
+                documents.
+              </div>
+              <div className="text-xs text-gray-400 mt-4">
+                Python • Streamlit • PyPDF2 • Langchain • Hugging Face
+                Transformers • OpenAI API
+              </div>
             </div>
-            <div className="text-xs text-gray-400">
-              React • Node.js • MongoDB • Express • EJS • JWT
+          </a>
+
+          <a
+            href="https://github.com/Lakshittt/LachooConnect"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="border border-gray-600 p-3 rounded">
+              <div className="flex items-center gap-2 mb-2">
+                <TerminalIcon size={16} className="text-yellow-400" />
+                <span className="text-yellow-400 font-semibold">
+                  Lachoo Connect
+                </span>
+              </div>
+              <div className="text-gray-300 text-sm mb-2">
+                Lachoo Connect is an Alumni App for our college, Lachoo Memorial
+                College. The app serves as a platform for alumni to connect with
+                each other, share their experiences, and stay updated on each
+                other's current endeavors. It utilizes Firebase for database
+                management and authentication and has been developed using
+                React. With Lachoo Connect, alumni can view profiles of other
+                alumni and learn about their professional accomplishments and
+                activities. The app fosters a sense of community among former
+                students, enabling them to network, mentor, and collaborate with
+                each other.
+              </div>
+              <div className="text-xs text-gray-400 mt-4">
+                HTML • CSS • JavaScript • Bootstrap • React
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     ),
@@ -529,7 +601,7 @@ function App() {
       />
       <div className="absolute inset-0 bg-black bg-opacity-70 z-10" />
       {/* Move the hi div above the overlay and video, and give it a higher z-index */}
-      <div className="absolute top-0 left-0 w-full h-20 z-20 flex flex-col justify-center px-6">
+      <div className="fixed top-0 left-0 w-full h-20 z-30 flex flex-col justify-center px-6 bg-black bg-opacity-80 backdrop-blur-md">
         <p className="text-green-500 text-lg font-bold">Lakshit Jain</p>
         <p className="text-gray-300 text-sm">Software Developer</p>
       </div>

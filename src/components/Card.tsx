@@ -38,7 +38,10 @@ const IdCard: React.FC<IdCardProps> = ({
     const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
 
-    setLocalMousePosition({ x, y });
+    setLocalMousePosition((prev) => ({
+      x: x * 0.9 + prev.x * 0.1,
+      y: y * 0.9 + prev.y * 0.1,
+    }));
 
     // Update light position for glow effect
     updateGlowEffect(e.clientX - rect.left, e.clientY - rect.top);
@@ -97,8 +100,8 @@ const IdCard: React.FC<IdCardProps> = ({
   };
 
   // Calculate the rotation styles based on mouse position
-  const rotateX = -localMousePosition.y * 10; // degrees
-  const rotateY = localMousePosition.x * 10; // degrees
+  const rotateX = -localMousePosition.y * 5; // degrees
+  const rotateY = localMousePosition.x * 5; // degrees
 
   return (
     <div

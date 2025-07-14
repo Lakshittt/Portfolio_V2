@@ -28,7 +28,8 @@
 
 @layer utilities {
   .terminal-font {
-    font-family: "Courier New", "Monaco", "Lucida Console", monospace;
+    /* font-family: "Courier New", "Monaco", "Lucida Console", monospace; */
+    font-family: "jetbrains-mono", "Fira Code", "Courier New", monospace;
   }
 
   /* Mobile optimizations */
