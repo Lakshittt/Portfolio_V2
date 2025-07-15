@@ -111,13 +111,37 @@
     margin-left: -0.15em;
   }
 
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
+  /* Typewriter effect classes for card component */
+  .typewriter {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .typewriter-1 {
+    width: 0;
+    animation: typing 1s steps(40, end) 0s forwards;
+  }
+
+  .typewriter-2 {
+    width: 0;
+    animation: typing 1s steps(40, end) 1s forwards;
+  }
+
+  .typewriter-3 {
+    width: 0;
+    animation: typing 1s steps(40, end) 2s forwards;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
     }
-    50% {
-      border-color: orange;
+    to {
+      width: 100%;
     }
   }
 }

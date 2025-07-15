@@ -157,26 +157,34 @@ const IdCard: React.FC<IdCardProps> = ({
                 />
               </div>
               <h2 className="text-2xl font-bold text-white">Lakshit Jain</h2>
-              <p className="text-green-500 text-sm">
-                Full Stack software developer
-              </p>
+              <p className="text-green-500 text-sm">Software Developer</p>
             </div>
             {/* Card Details */}
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 text-gray-300">
                 <MapPin size={14} className="text-green-500" />
-                <span>Bengaluru, India</span>
+                <span className="typewriter typewriter-1">
+                  Bengaluru, India
+                </span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <Briefcase size={14} className="text-green-500" />
-                <span>
+                <span className="typewriter typewriter-2">
                   Frontend Developer{" "}
-                  <a href="http://www.myshubhlife.com">@MyShubhLife</a>
+                  <a
+                    href="http://www.myshubhlife.com"
+                    target="_blank"
+                    className="hover:text-green-500"
+                  >
+                    @MyShubhLife
+                  </a>
                 </span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <Code size={14} className="text-green-500" />
-                <span>React, Node.js, TypeScript</span>
+                <span className="typewriter typewriter-3">
+                  React, Node.js, TypeScript
+                </span>
               </div>
             </div>
             {/* Social Links */}

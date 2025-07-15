@@ -645,17 +645,15 @@ function App() {
         {viewCounterImg && (
           <div className="hidden sm:flex items-center gap-2">
             <span className="text-gray-300">Portfolio Views:</span>
-            <a href="https://www.freecounterstat.com" title="website counter">
-              <img
-                width={50}
-                height={50}
-                src={viewCounterImg}
-                title="website counter"
-                alt="website counter"
-                style={{ display: "none" }}
-                onLoad={(e) => (e.currentTarget.style.display = "inline")}
-              />
-            </a>
+            <img
+              width={50}
+              height={50}
+              src={viewCounterImg}
+              title="website counter"
+              alt="website counter"
+              style={{ display: "none" }}
+              onLoad={(e) => (e.currentTarget.style.display = "inline")}
+            />
           </div>
         )}
       </div>
