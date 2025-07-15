@@ -30,6 +30,7 @@ function App() {
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const [viewCounterImg, setViewCounterImg] = useState<string | null>(null);
 
   const commands = {
     help: () => (
@@ -467,7 +468,6 @@ function App() {
   };
 
   useEffect(() => {
-    // Welcome message
     const welcomeOutput: CommandOutput = {
       command: "",
       output: (
@@ -496,6 +496,13 @@ function App() {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
+
+    const img = new Image();
+    img.src =
+      "https://counter1.optistats.ovh/private/freecounterstat.php?c=4f851adnbs5l59scxty3d43jl8xat2kj";
+    img.onload = () => {
+      setViewCounterImg(img.src);
+    };
   }, [history]);
 
   // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -589,9 +596,28 @@ function App() {
       />
       <div className="absolute inset-0 bg-black bg-opacity-70 z-10" />
       {/* Move the hi div above the overlay and video, and give it a higher z-index */}
-      <div className="fixed top-0 left-0 w-full h-20 z-30 flex flex-col justify-center px-6 bg-black bg-opacity-30 backdrop-blur-md">
-        <p className="text-green-500 text-lg font-bold">Lakshit Jain</p>
-        <p className="text-gray-300 text-sm">Software Developer</p>
+      <div className="fixed top-0 left-0 w-full h-20 z-30 flex flex-row justify-between px-6 bg-black bg-opacity-30 backdrop-blur-md">
+        <div className="flex flex-col justify-center">
+          <p className="text-green-500 text-lg font-bold">Lakshit Jain</p>
+          <p className="text-gray-300 text-sm">Software Developer</p>
+        </div>
+
+        {viewCounterImg && (
+          <div className="hidden sm:flex items-center gap-2">
+            <span className="text-gray-300">Portfolio Views:</span>
+            <a href="https://www.freecounterstat.com" title="website counter">
+              <img
+                width={50}
+                height={50}
+                src={viewCounterImg}
+                title="website counter"
+                alt="website counter"
+                style={{ display: "none" }}
+                onLoad={(e) => (e.currentTarget.style.display = "inline")}
+              />
+            </a>
+          </div>
+        )}
       </div>
       <div className="relative z-20 flex w-full">
         <Card
