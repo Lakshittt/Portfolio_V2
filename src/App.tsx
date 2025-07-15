@@ -77,7 +77,9 @@ function App() {
 
     sudo: () => (
       <div className="space-y-3">
-        <div className="text-green-500 font-bold">About Me...</div>
+        <div className="text-green-500 font-bold flex items-center gap-2">
+          <TerminalIcon /> About Me
+        </div>
         <div className="text-gray-300 leading-relaxed">
           <p>
             Hello! I'm Lakshit jain passionate Full Stack Developer with
@@ -97,7 +99,10 @@ function App() {
 
     skills: () => (
       <div className="space-y-3">
-        <div className="text-green-500 font-bold">Technical Skills</div>
+        <div className="text-green-500 font-bold flex items-center gap-2">
+          <TerminalIcon /> Technical Skills
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <div className="text-yellow-400 font-semibold mb-2">
@@ -167,8 +172,33 @@ function App() {
 
     projects: () => (
       <div className="space-y-4">
-        <div className="text-green-500 font-bold">Featured Projects</div>
+        <div className="text-green-500 font-bold flex items-center gap-2">
+          <TerminalIcon /> Featured Projects
+        </div>
         <div className="space-y-4 flex flex-col gap-2">
+          <a
+            href="https://github.com/Lakshittt/Portfolio_V2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="border border-gray-600 p-3 rounded">
+              <div className="flex items-center gap-2 mb-2">
+                <Code size={16} className="text-yellow-400" />
+                <span className="text-yellow-400 font-semibold">
+                  Portfolio website
+                </span>
+              </div>
+              <div className="text-gray-300 text-sm mb-2">
+                A personal portfolio website built with React and TypeScript,
+                featuring an interactive terminal interface for exploring my
+                skills, projects, and experience in a unique and engaging way.
+              </div>
+              <div className="text-xs text-gray-400 mt-4">
+                React • TypeScript • Tailwind CSS • Render • Three.js
+              </div>
+            </div>
+          </a>
+
           <a
             href="https://github.com/Lakshittt/CareerFit-AI"
             target="_blank"
@@ -200,7 +230,7 @@ function App() {
           >
             <div className="border border-gray-600 p-3 rounded">
               <div className="flex items-center gap-2 mb-2">
-                <TerminalIcon size={16} className="text-yellow-400" />
+                <Code size={16} className="text-yellow-400" />
                 <span className="text-yellow-400 font-semibold">
                   Shopify Plus
                 </span>
@@ -224,7 +254,7 @@ function App() {
           >
             <div className="border border-gray-600 p-3 rounded">
               <div className="flex items-center gap-2 mb-2">
-                <TerminalIcon size={16} className="text-yellow-400" />
+                <Code size={16} className="text-yellow-400" />
                 <span className="text-yellow-400 font-semibold">
                   PDF-Summarizer
                 </span>
@@ -248,7 +278,7 @@ function App() {
           >
             <div className="border border-gray-600 p-3 rounded">
               <div className="flex items-center gap-2 mb-2">
-                <TerminalIcon size={16} className="text-yellow-400" />
+                <Code size={16} className="text-yellow-400" />
                 <span className="text-yellow-400 font-semibold">
                   Lachoo Connect
                 </span>
@@ -270,7 +300,9 @@ function App() {
 
     education: () => (
       <div className="space-y-3">
-        <div className="text-green-500 font-bold">Education</div>
+        <div className="text-green-500 font-bold flex items-center gap-2">
+          <TerminalIcon /> Education
+        </div>
         <div className="space-y-3">
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -323,8 +355,10 @@ function App() {
 
     experience: () => (
       <div className="space-y-3">
-        <div className="text-green-500 font-bold">Work Experience</div>
-        <div className="space-y-4">
+        <div className="text-green-500 font-bold flex items-center gap-2">
+          <TerminalIcon /> Work Experience
+        </div>
+        <div className="space-y-4 border border-gray-600 p-3 rounded">
           <div>
             <div className="text-yellow-400 font-semibold text-xl">
               Frontend Developer
@@ -361,7 +395,9 @@ function App() {
 
     contact: () => (
       <div className="space-y-3">
-        <div className="text-green-500 font-bold">Contact Information</div>
+        <div className="text-green-500 font-bold flex items-center gap-2">
+          <TerminalIcon /> Contact Information
+        </div>
         <div className="space-y-2">
           <a href="mailto:lakshitjain.dev@gmail.com">
             <div className="flex items-center gap-2">
@@ -385,7 +421,9 @@ function App() {
 
     social: () => (
       <div className="space-y-3">
-        <div className="text-green-500 font-bold">Social Links</div>
+        <div className="text-green-500 font-bold flex items-center gap-2">
+          <TerminalIcon /> Social Links
+        </div>
         <div className="space-y-2">
           <a
             href="https://github.com/lakshittt"
@@ -446,7 +484,9 @@ function App() {
 
       return (
         <div className="space-y-3">
-          <div className="text-green-500 font-bold">Resume</div>
+          <div className="text-green-500 font-bold flex items-center gap-2">
+            <TerminalIcon /> Resume
+          </div>
           <div className="text-gray-300 flex items-center gap-2">
             <span>
               Resume download initiated..., Or you can visit here to see the

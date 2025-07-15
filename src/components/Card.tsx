@@ -107,7 +107,6 @@ const IdCard: React.FC<IdCardProps> = ({
     <div
       ref={containerRef}
       className="hidden lg:flex w-1/3 p-8 mt-20 items-center justify-center relative"
-      style={{ perspective: "1000px", height: "600px" }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
