@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Card from "./components/Card";
 import Terminal from "./components/Terminal";
+import Loader from "./components/Loader";
 
 interface CommandOutput {
   command: string;
@@ -31,6 +32,7 @@ function App() {
   const terminalRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const [viewCounterImg, setViewCounterImg] = useState<string | null>(null);
+  const [loaderLoading, setLoaderLoading] = useState(true);
 
   const commands = {
     help: () => (
@@ -545,16 +547,6 @@ function App() {
     };
   }, [history]);
 
-  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-  //   if (!cardRef.current) return;
-  //   const rect = cardRef.current.getBoundingClientRect();
-  //   const centerX = rect.left + rect.width / 2;
-  //   const centerY = rect.top + rect.height / 2;
-  //   const mouseX = e.clientX - centerX;
-  //   const mouseY = e.clientY - centerY;
-  //   setMousePosition({ x: mouseX, y: mouseY });
-  // };
-
   const executeCommand = async (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase();
 
@@ -620,76 +612,91 @@ function App() {
     }
   };
 
+  const handleLoadingComplete = () => {
+    setLoaderLoading(false);
+  };
+
+  const Clock = () => {
+    const [time, setTime] = React.useState(new Date());
+
+    React.useEffect(() => {
+      const interval = setInterval(() => setTime(new Date()), 1000);
+      return () => clearInterval(interval);
+    }, []);
+
+    return (
+      <span className="text-green-500 text-sm">
+        {time.toLocaleTimeString()}
+      </span>
+    );
+  };
+
   const focusInput = () => {
     inputRef.current?.focus();
   };
 
   return (
-    <div className="min-h-screen h-screen font-mono flex text-green-500 relative overflow-hidden ">
-      <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/bg.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-      <div className="absolute inset-0 bg-black bg-opacity-70 z-10" />
-      {/* Move the hi div above the overlay and video, and give it a higher z-index */}
-      <div className="fixed top-0 left-0 w-full h-20 z-30 flex flex-row justify-between px-6 bg-black bg-opacity-30 backdrop-blur-md">
-        <div className="flex flex-col justify-center">
-          <p className="text-green-500 text-lg font-bold">Lakshit Jain</p>
-          <p className="text-gray-300 text-sm">Software Developer</p>
-        </div>
+    <div className="bg-black min-h-screen h-screen">
+      {loaderLoading ? (
+        <Loader onComplete={handleLoadingComplete} />
+      ) : (
+        <div className="min-h-screen h-screen font-mono flex text-green-500 relative overflow-hidden">
+          <video
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            src="/bg.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+          <div className="fixed top-0 left-0 w-full h-20 z-30 flex flex-row justify-between px-6 bg-black bg-opacity-30 backdrop-blur-md">
+            <div className="flex flex-col justify-center">
+              <p className="text-green-500 text-lg font-bold">Lakshit Jain</p>
+              <p className="text-gray-300 text-sm">Software Developer</p>
+            </div>
 
-        {viewCounterImg && (
-          <div className="hidden sm:flex items-center gap-2 pb-1">
-            <span className="text-gray-300">Portfolio Views:</span>
-            <img
-              width={50}
-              height={50}
-              className="pb-1"
-              src={viewCounterImg}
-              title="website counter"
-              alt="website counter"
-              style={{ display: "none" }}
-              onLoad={(e) => (e.currentTarget.style.display = "inline")}
+            {viewCounterImg && (
+              <div className="hidden sm:flex items-center gap-2 pb-1">
+                <span className="text-gray-300">Portfolio Views:</span>
+                <img
+                  width={50}
+                  height={50}
+                  className="pb-1"
+                  src={viewCounterImg}
+                  title="website counter"
+                  alt="website counter"
+                  style={{ display: "none" }}
+                  onLoad={(e) => (e.currentTarget.style.display = "inline")}
+                />
+              </div>
+            )}
+          </div>
+          <div className="relative z-20 flex w-full">
+            <Card
+              cardFlipped={cardFlipped}
+              setCardFlipped={setCardFlipped}
+              isCardHovered={isCardHovered}
+              setIsCardHovered={setIsCardHovered}
+              cardRef={cardRef}
+            />
+            <Terminal
+              history={history}
+              isLoading={isLoading}
+              input={input}
+              setInput={setInput}
+              handleSubmit={handleSubmit}
+              handleKeyDown={handleKeyDown}
+              inputRef={inputRef}
+              terminalRef={terminalRef}
+              focusInput={focusInput}
             />
           </div>
-        )}
-      </div>
-      <div className="relative z-20 flex w-full">
-        <Card
-          cardFlipped={cardFlipped}
-          setCardFlipped={setCardFlipped}
-          isCardHovered={isCardHovered}
-          setIsCardHovered={setIsCardHovered}
-          cardRef={cardRef}
-        />
-        <Terminal
-          history={history}
-          isLoading={isLoading}
-          input={input}
-          setInput={setInput}
-          handleSubmit={handleSubmit}
-          handleKeyDown={handleKeyDown}
-          inputRef={inputRef}
-          terminalRef={terminalRef}
-          focusInput={focusInput}
-        />
-      </div>
-      <footer className="fixed bottom-0 left-0 w-full z-30 flex justify-end items-center py-2 pr-4">
-        <span className="text-green-500 text-sm">
-          {(() => {
-            const [time, setTime] = React.useState(new Date());
-            React.useEffect(() => {
-              const interval = setInterval(() => setTime(new Date()), 1000);
-              return () => clearInterval(interval);
-            }, []);
-            return time.toLocaleTimeString();
-          })()}
-        </span>
-      </footer>
+          <footer className="fixed bottom-0 left-0 w-full z-30 flex justify-end items-center py-2 pr-4">
+            <Clock />
+          </footer>
+        </div>
+      )}
     </div>
   );
 }

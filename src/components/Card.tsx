@@ -136,7 +136,7 @@ const IdCard: React.FC<IdCardProps> = ({
         >
           <div
             ref={frontCardRef}
-            className="rounded-lg shadow-2xl p-6 w-full h-full border border-gray-700 relative overflow-hidden flex flex-col justify-between"
+            className="rounded-lg shadow-2xl p-6 w-full h-full border border-gray-900 relative overflow-hidden flex flex-col justify-between opacity-85"
             style={{
               boxShadow:
                 isHovering && !cardFlipped
