@@ -106,7 +106,7 @@ const IdCard: React.FC<IdCardProps> = ({
   return (
     <div
       ref={containerRef}
-      className="hidden lg:flex w-1/3 p-8 mt-20 items-center justify-center relative"
+      className="hidden lg:flex w-1/3 p-8 items-center justify-center relative"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
@@ -175,6 +175,8 @@ const IdCard: React.FC<IdCardProps> = ({
                     href="http://www.myshubhlife.com"
                     target="_blank"
                     className="hover:text-green-500"
+                    onClick={(e) => e.stopPropagation()}
+                    rel="noopener noreferrer"
                   >
                     @MyShubhLife
                   </a>

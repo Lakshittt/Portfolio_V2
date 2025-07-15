@@ -36,7 +36,7 @@ const Terminal: React.FC<TerminalProps> = ({
       className="h-screen p-4 lg:p-4 px-2 overflow-y-auto cursor-text"
       onClick={focusInput}
     >
-      <div className="max-w-4xl mx-auto px-2">
+      <div className="max-w-6xl mx-auto px-2">
         {/* Terminal Header */}
         <div className="flex items-center gap-2 mb-4 text-gray-500 text-sm lg:text-base">
           <TerminalIcon size={16} />

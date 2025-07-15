@@ -625,7 +625,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen h-screen font-mono flex text-green-500 bg-gradient-to-br from-zinc-800 via-black to-black relative overflow-hidden ">
+    <div className="min-h-screen h-screen font-mono flex text-green-500 relative overflow-hidden ">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         src="/bg.mp4"
@@ -643,11 +643,12 @@ function App() {
         </div>
 
         {viewCounterImg && (
-          <div className="hidden sm:flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2 pb-1">
             <span className="text-gray-300">Portfolio Views:</span>
             <img
               width={50}
               height={50}
+              className="pb-1"
               src={viewCounterImg}
               title="website counter"
               alt="website counter"
@@ -665,7 +666,6 @@ function App() {
           setIsCardHovered={setIsCardHovered}
           cardRef={cardRef}
         />
-        {/* <InteractiveCard3D /> */}
         <Terminal
           history={history}
           isLoading={isLoading}
@@ -678,6 +678,18 @@ function App() {
           focusInput={focusInput}
         />
       </div>
+      <footer className="fixed bottom-0 left-0 w-full z-30 flex justify-end items-center py-2 pr-4">
+        <span className="text-green-500 text-sm">
+          {(() => {
+            const [time, setTime] = React.useState(new Date());
+            React.useEffect(() => {
+              const interval = setInterval(() => setTime(new Date()), 1000);
+              return () => clearInterval(interval);
+            }, []);
+            return time.toLocaleTimeString();
+          })()}
+        </span>
+      </footer>
     </div>
   );
 }
