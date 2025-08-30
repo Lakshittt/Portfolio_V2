@@ -148,10 +148,10 @@ const IdCard: React.FC<IdCardProps> = ({
           >
             {/* Card Header */}
             <div className="text-center mb-4">
-              <div className="w-36 h-36 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
+              <div className="w-40 h-40 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                 <img
-                  src="https://media.licdn.com/dms/image/v2/D5603AQGl0rw0gDZfkg/profile-displayphoto-shrink_800_800/B56Zb3umD4HcAc-/0/1747912910861?e=1758153600&v=beta&t=xKUQDvEdOhxIFkZRj1HlR6LpAGGowjsmfa5BpNYF_uY"
-                  className=" rounded-full object-cover"
+                  src="/profile.png"
+                  className="w-full h-full rounded-full object-cover"
                   alt="profile"
                   crossOrigin="anonymous"
                 />

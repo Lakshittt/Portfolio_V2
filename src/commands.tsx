@@ -46,6 +46,9 @@ export const commands = {
         <div>
           <span className="text-yellow-400">resume</span> - Download my resume
         </div>
+        <div>
+          <span className="text-yellow-400">exit</span> - End the session
+        </div>
       </div>
     </div>
   ),
@@ -479,4 +482,12 @@ export const commands = {
   },
 
   clear: () => null,
+
+  exit: () => {
+    setTimeout(() => {
+      window.close();
+    }, 1000);
+
+    return <div className="text-gray-300">Session ended.</div>;
+  },
 };
